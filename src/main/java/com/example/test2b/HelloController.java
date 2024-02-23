@@ -38,15 +38,16 @@ public class HelloController implements Initializable {
     @FXML
     private TableView<Student_grades> tablefordata;
 
-          String usertodiplay;
+    String usertodiplay;
 
-        public void setUsername(String usertodiplay) {
+    public void setUsername(String usertodiplay) {
 
-            this.usertodiplay = usertodiplay;
-        }
-    public void displayUsername() {
-        showuser.setText(usertodiplay);
+        this.usertodiplay = usertodiplay;
     }
+    public void displayUsername() {
+        showuser.setText("welcome "+usertodiplay);
+    }
+
 
     @FXML     // This adds the data in the table we only provide name,subject and score
     void addData(ActionEvent event) {
@@ -78,7 +79,7 @@ public class HelloController implements Initializable {
     @FXML
     void getData(ActionEvent event) {
         error.setText("");
-
+        showStudent_grades(); //This displays the data in the table
     }
 
 
@@ -111,7 +112,6 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showuser.setText(usertodiplay);
     }
     private ObservableList<Student_grades> getStudent_gradesList() {
         ObservableList<Student_grades> studentgradesList = FXCollections.observableArrayList();

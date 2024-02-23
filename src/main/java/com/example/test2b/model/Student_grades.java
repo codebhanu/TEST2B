@@ -29,21 +29,21 @@ public class Student_grades {
     }
 
     public int getScore() {
-        return score;
+        return Score;
     }
 
     public void setScore(int score) {
-        this.score = score;
+        this.Score = score;
     }
 
     public Student_grades(int grade_id, String student_name, String subject, int score) {
         this.grade_id = grade_id;
         this.student_name = student_name;
         this.subject = subject;
-        this.score = score;
+        this.Score = score;
     }
 
     private String subject;
-    private  int score;
+    private  int Score;
 
 }

@@ -71,23 +71,23 @@ public class LoginController implements Initializable {
                     e.printStackTrace();
                 }
 
-                // Check if entered credentials match static credentials
+                // Check if entered credentials match
                 if (enteredUsername.equals(Username) && enteredPassword.equals(Password)) {
                     // Authentication success
                     failedAttempts=0;
                     try {
-                        // Load the second view
+                        // Loading the second view
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
                         Parent root = loader.load();
 
-                        // passing user name to another view
-                        HelloController secondController = loader.getController();
-                        secondController.setUsername(nameforuser);
-                        secondController.displayUsername();;
 
-
-                        // Get the current stage (using any node, in this case, the usernameField)
                         Stage stage = (Stage) usernameField.getScene().getWindow();
+    // sending username to another controller
+                        HelloController secondController  = loader.getController();
+
+                        secondController.setUsername(nameforuser);
+                        secondController.displayUsername();
+
 
 
                         Scene scene = new Scene(root);
