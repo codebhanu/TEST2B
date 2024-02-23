@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
 
+
     public Label showuser;
     @FXML
     private TableColumn<Student_grades, String> nameCol;
@@ -37,7 +38,17 @@ public class HelloController implements Initializable {
     @FXML
     private TableView<Student_grades> tablefordata;
 
-    @FXML     // This adds the data in the table we only provide name,subject
+          String usertodiplay;
+
+        public void setUsername(String usertodiplay) {
+
+            this.usertodiplay = usertodiplay;
+        }
+    public void displayUsername() {
+        showuser.setText(usertodiplay);
+    }
+
+    @FXML     // This adds the data in the table we only provide name,subject and score
     void addData(ActionEvent event) {
         String query = "INSERT INTO Student_grades (student_name, subject, score) VALUES (?, ?, ?)";
         executeQuery(query, List.of(nameInput.getText(), subjectinput.getText(), scoreinput.getText()));
@@ -67,7 +78,7 @@ public class HelloController implements Initializable {
     @FXML
     void getData(ActionEvent event) {
         error.setText("");
-        showStudent_grades(); //This displays the data in the table
+
     }
 
 
@@ -100,6 +111,7 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        showuser.setText(usertodiplay);
     }
     private ObservableList<Student_grades> getStudent_gradesList() {
         ObservableList<Student_grades> studentgradesList = FXCollections.observableArrayList();

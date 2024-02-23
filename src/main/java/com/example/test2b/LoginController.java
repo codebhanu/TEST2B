@@ -28,11 +28,6 @@ public class LoginController implements Initializable {
     private PasswordField passwordField;
 
 
-
-
-
-
-
     private int failedAttempts = 0;
 
 
@@ -84,6 +79,12 @@ public class LoginController implements Initializable {
                         // Load the second view
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
                         Parent root = loader.load();
+
+                        // passing user name to another view
+                        HelloController secondController = loader.getController();
+                        secondController.setUsername(nameforuser);
+                        secondController.displayUsername();;
+
 
                         // Get the current stage (using any node, in this case, the usernameField)
                         Stage stage = (Stage) usernameField.getScene().getWindow();

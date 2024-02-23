@@ -51,6 +51,9 @@
         <Font name="American Typewriter" size="24.0" />
       </font>
     </Label>
-      <Label fx:id="showuser" alignment="CENTER" layoutX="28.0" layoutY="21.0" prefHeight="26.0" prefWidth="143.0" textFill="#231ad0" />
+      <Label fx:id="showuser" alignment="CENTER" layoutX="14.0" layoutY="16.0" prefHeight="26.0" prefWidth="143.0" textFill="#bc5a5a">
+         <font>
+            <Font name="BM DoHyeon OTF" size="26.0" />
+         </font></Label>
   </children>
 </AnchorPane>
